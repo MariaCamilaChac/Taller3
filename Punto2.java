@@ -1,16 +1,21 @@
+/**Param:Matrix
+ * Author: Maria Camila CHacon
+ * Date:27/11/2017
+ */
+
 import java.io.*;
 
 public class Punto2 {
 	
-	public static int[][] cargarArray(int array[][], int minRandom, int maxRandom) {
+	public static int[][] cargarArray(int array[][], int minRandom, int maxRandom) { //Function for load up the matrix 
 	    for (int fil = 0; fil < array.length; fil++) {
 	        for (int col = 0; col < array[fil].length; col++) {
-	            array[fil][col] = minRandom - ((int) Math.round((Math.random()) * (minRandom - maxRandom)));
+	            array[fil][col] = minRandom - ((int) Math.round((Math.random()) * (minRandom - maxRandom))); // assign random numbers
 	        }
 	    }
 		return array;
 	}
-	public static void imprimeArray(int array[][]){
+	public static void imprimeArray(int array[][]){ //Function for print the matrix
 		for (int fil = 0; fil < array.length; fil++) {
 			System.out.println("");
 		        for (int col = 0; col < array[fil].length; col++) {
@@ -20,15 +25,15 @@ public class Punto2 {
 		    }
 	
 	public static void RecorrerArray( int array[][]){
-		int x = 0; //Para manejar las filas
-	      int y = 0; //Para manejar las columnas
-	      int flag = 0;  //Bandera para saber que recorrido se debe realizar
+		int x = 0; //For monitor the lines
+	      int y = 0; //For monitor the columns
+	      int flag = 0;  //flag for know what round need to do 
 	      int n = 0;
 	      int elementos=array.length*array.length;
 		  while (n < elementos) {
 		        
 		         switch (flag) {
-		         case 0: // Recorrido de izquierda a derecha
+		         case 0: // round from left to rigth
 		            for (int m = x; m < array[0].length - y; m++) {
 		               System.out.print(" " + array[x][m]);
 		               n++;
@@ -36,7 +41,7 @@ public class Punto2 {
 		            flag++;
 		            break;
 		 
-		         case 1: //Recorrido de arriba abajo
+		         case 1: //round from top to bottom
 		            for (int m = x + 1; m < array.length - x; m++) {
 		               System.out.print(" " + array[m][array[0].length - 1 - y]);
 		               n++;
@@ -44,7 +49,7 @@ public class Punto2 {
 		            flag++;
 		            break;
 		 
-		         case 2: //Recorrido de derecha a izquierda
+		         case 2: //round from right to left
 		            for (int m = array[0].length - 2 - y; m >= y; m--) {
 		               System.out.print(" " + array[array.length - 1 - x][m]);
 		               n++;
@@ -52,7 +57,7 @@ public class Punto2 {
 		            flag++;
 		            break;
 		 
-		         case 3: //Recorrido de abajo a arriba
+		         case 3: //round bottom up
 		            for (int m = array.length - 2 - x; m >= x + 1; m--) {
 		               System.out.print(" " + array[m][y]);
 		               n++;
@@ -74,12 +79,12 @@ public class Punto2 {
 		 BufferedWriter bw = new BufferedWriter (new OutputStreamWriter(System.out));
 			
 		
-		bw.write("ingrese el tamaño de la matriz");
+		bw.write("ingrese el tamaÃ±o de la matriz");
 		bw.flush();
-		int Tamaño=Integer.parseInt(br.readLine() );
+		int TamaÃ±o=Integer.parseInt(br.readLine() );
 		
-		int [][] Array = new int [Tamaño][Tamaño];
-		
+		int [][] Array = new int [TamaÃ±o][TamaÃ±o];
+		// Call the functions
 		Punto2.cargarArray(Array, 0, 100);
 		Punto2.imprimeArray(Array);
 		bw.write("\n"+"Espiral");
