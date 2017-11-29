@@ -80,15 +80,15 @@ public class Punto5 { //print the matrix that is not part of the diamond generat
 		
 		bw.write("Digite tamaño del arreglo");
 		bw.flush();
-		int T = Integer.parseInt(br.readLine());
+		int T = Integer.parseInt(br.readLine()); //read the numbers and store them in a variable
 
 
 		bw.write("Escriba los numeros del arreglo, tenga en cuenta que será el doble"
 				+ " del numero del tamaño del arreglo es decir"+T*T +"\n");
 		bw.flush();
 		String Num1 = br.readLine();
-		String [] Num2 = Num1.split(",");
-		String [][] Array = new String [T][T]; 
+		String [] Num2 = Num1.split(","); //use the function split for brake the chain of characters
+		String [][] Array = new String [T][T];  // create de new matrix for store the array
             //call the functions
 		Punto5.cargarArray(Array,Num2); 
 	
