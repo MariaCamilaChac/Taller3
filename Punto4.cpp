@@ -14,7 +14,7 @@ string NumberToString(int Number)
 int main (int argc, char* argv[]){ //the statements that we going to use
 
 int m = 0 ;
-cout << "ingrese el tamaño de la matriz: ";
+cout << "ingrese el tamaÃ±o de la matriz: ";
 cin >> m ;
 int matriz [m][m]; 
 int matrix [m][m];
@@ -47,7 +47,7 @@ int matrix [m][m];
 	for (int i=0;i<m ;i++){
 		vacio = "";
 		for (int j= 0 ;j<m ;j++){
-			vacio = vacio + "[" + NumberToString(matrix[j][i])+ "]";
+			vacio = vacio + "[" + NumberToString(matrix[j][i])+ "]"; //print the matrix with cross values
 		}
 		cout << vacio + "\n";	
 	}
